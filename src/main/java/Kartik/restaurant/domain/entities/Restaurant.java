@@ -52,4 +52,7 @@ public class Restaurant {
     @Field(type = FieldType.Nested)
     private List<Review> review = new ArrayList<>();
 
+    @Field(type = FieldType.Nested)
+    private User createdBy;
+
 }
