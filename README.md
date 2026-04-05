@@ -22,12 +22,10 @@ Designed to handle high-performance search, secure authentication, and structure
 
 ---
 <img width="1211" height="961" alt="image" src="https://github.com/user-attachments/assets/04d68a89-931c-4dfa-99f1-1c8e73bbde74" />
----
 
 ## 🧠 Domain Model
 ---
 <img width="1712" height="1008" alt="image" src="https://github.com/user-attachments/assets/fe6b7af6-914b-4fb9-9ebe-4cfe21aa84a6" />
----
 
 ## 🛠️ Tech Stack
 
