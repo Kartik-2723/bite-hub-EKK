@@ -1,7 +1,10 @@
 package Kartik.restaurant.controllers;
 
 import Kartik.restaurant.domain.dtos.ErrorDto;
+import Kartik.restaurant.domain.entities.Review;
 import Kartik.restaurant.exceptions.BaseException;
+import Kartik.restaurant.exceptions.RestaurantNotFoundException;
+import Kartik.restaurant.exceptions.ReviewNotAllowedException;
 import Kartik.restaurant.exceptions.StorageException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -17,6 +20,29 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 @Slf4j
 public class ErrorController {
+
+    @ExceptionHandler(ReviewNotAllowedException.class)
+    public ResponseEntity<ErrorDto> handleReviewNotAllowedException(ReviewNotAllowedException ex){
+        log.error("Caught ReviewNotAllowedException",ex);
+
+        ErrorDto errorDto = ErrorDto.builder()
+                .status(HttpStatus.BAD_REQUEST.value())
+                .message("This user cannot review this restaurant")
+                .build();
+
+        return new ResponseEntity<>(errorDto,HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(RestaurantNotFoundException.class)
+    public ResponseEntity<ErrorDto> handleRestaurantNotFoundException(RestaurantNotFoundException ex){
+
+        ErrorDto errorDto = ErrorDto.builder()
+                .status(HttpStatus.NOT_FOUND.value())
+                .message("The specified restaurant wasn't found")
+                .build();
+
+        return new ResponseEntity<>(errorDto,HttpStatus.NOT_FOUND);
+    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorDto> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex){

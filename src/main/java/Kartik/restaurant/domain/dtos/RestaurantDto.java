@@ -20,15 +20,10 @@ import java.util.List;
 @Builder
 public class RestaurantDto {
     private String id;
-
     private String name;
-
     private String cuisineType;
-
     private String contactInformation;
-
     private Float averageRating;
-
     private GeoPointDto geoLocation;
 
     private AddressDto address;
@@ -37,7 +32,7 @@ public class RestaurantDto {
 
     private List<PhotoDto> photos = new ArrayList<>();
 
-    private List<ReviewDto> review = new ArrayList<>();
+    private List<ReviewDto> reviews = new ArrayList<>();
 
     private UserDto createdBy;
 

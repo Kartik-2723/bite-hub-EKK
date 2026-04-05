@@ -21,6 +21,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth ->
                         auth
                                 .requestMatchers(HttpMethod.GET,"/api/photos/**").permitAll()
+                                .requestMatchers(HttpMethod.GET,"/api/restaurants/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 ->
@@ -35,7 +36,7 @@ public class SecurityConfig {
     }
 
     @Bean
-     public JwtAuthenticationConverter jwtAuthenticationConverter(){
+    public JwtAuthenticationConverter jwtAuthenticationConverter(){
         return new JwtAuthenticationConverter();
     }
 
