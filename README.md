@@ -1,4 +1,3 @@
-<img width="1712" height="1008" alt="image" src="https://github.com/user-attachments/assets/fe6b7af6-914b-4fb9-9ebe-4cfe21aa84a6" />
 
 # 🍽️ Bite-EKK
 
@@ -21,62 +20,13 @@ Designed to handle high-performance search, secure authentication, and structure
 
 ## 🏗️ Architecture Overview
 
-The system follows a modular backend design:
-
-- **Controller Layer** → Handles API requests
-- **Service Layer** → Business logic
-- **Repository Layer** → Elasticsearch interaction
-- **Security Layer** → Keycloak integration
-
+---
+<img width="1211" height="961" alt="image" src="https://github.com/user-attachments/assets/04d68a89-931c-4dfa-99f1-1c8e73bbde74" />
 ---
 
 ## 🧠 Domain Model
-
-### Core Entities:
-
-#### 🏪 Restaurant
-- id, name, cuisineType
-- contactInformation
-- averageRating
-- geoLocation (GeoPoint)
-- has:
-  - Address
-  - OperatingHours
-  - Reviews
-
-#### 📍 Address
-- streetNumber, streetName, unit
-- city, state, postalCode, country
-
-#### 🕒 OperatingHours
-- TimeRange for each day (Mon–Sun)
-
-#### ⏰ TimeRange
-- openTime, closeTime
-
-#### 📝 Review
-- content, rating
-- datePosted, lastEdited
-- linked to:
-  - Restaurant
-  - User
-  - Photos
-
-#### 👤 User
-- username, givenName, familyName
-
-#### 📸 Photo
-- url, uploadDate
-
 ---
-
-## 🔗 Relationships
-
-- Restaurant → has one Address & OperatingHours
-- Restaurant → has many Reviews
-- Review → created by one User
-- Review → has multiple Photos
-
+<img width="1712" height="1008" alt="image" src="https://github.com/user-attachments/assets/fe6b7af6-914b-4fb9-9ebe-4cfe21aa84a6" />
 ---
 
 ## 🛠️ Tech Stack
